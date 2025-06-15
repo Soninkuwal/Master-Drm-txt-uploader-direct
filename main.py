@@ -1065,17 +1065,6 @@ async def text_handler(bot: Client, m: Message):
                         await m.reply_text(str(e))
                         time.sleep(e.x)
                         pass
-
-                import mimetypes
-
-file_path = f'{name}.mp4'
-mime_type, _ = mimetypes.guess_type(file_path)
-if mime_type and mime_type.startswith('video'):
-    await bot.send_video(chat_id=channel_id, video=file_path, caption=cc, supports_streaming=True)
-elif file_path.endswith('.pdf'):
-    await bot.send_document(chat_id=channel_id, document=file_path, caption=cc1)
-else:
-    await bot.send_document(chat_id=channel_id, document=file_path, caption=cc)
                                 
                 elif 'encrypted.m' in url:    
                     Show = f"**⚡Dᴏᴡɴʟᴏᴀᴅɪɴɢ Sᴛᴀʀᴛᴇᴅ...⏳**\n" \
