@@ -456,7 +456,7 @@ async def send_logs(client: Client, m: Message):  # Correct parameter name
 async def txt_handler(bot: Client, m: Message):  
     editable = await m.reply_text(f"__Hii, I am drm Downloader Bot__\n\n<i>Send Me Your txt file which enclude Name with url...\nE.g: Name: Link</i>")
     input: Message = await bot.listen(editable.chat.id)
-    #x = await input.download()
+    x = await input.download()
     await input.delete(True)
     file_name, ext = os.path.splitext(os.path.basename(x))  # Extract filename & extension
     path = f"./downloads/{m.chat.id}"
